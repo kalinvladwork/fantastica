@@ -1,0 +1,606 @@
+@import url(reset.css);
+@font-face {
+    font-family: steelfish_bd; 
+    src: url(../font/Steelfish_Rg/steelfish_bd.otf); 
+}
+@font-face {
+    font-family: Helvetica; 
+    src: url(../font/Helvetica_CE_Regular.ttf); 
+}
+.wrapper {
+    width: 1200px;
+    height: 2403px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.clear {
+    clear: both;
+}
+.wrapper a {
+    text-decoration: none;
+    color: #a76143;
+}
+
+/*  beginning of the block  header */
+.header {
+    height: 126px;
+    width: 1200px;
+    background-image: url(../images/header.png);
+    background-repeat: repeat-x;
+    position: relative;
+}
+.logoHeader {
+    height: 46px;
+    width: 150px;
+    position: absolute;
+    top: 35px;
+    left: 130px;
+    font: 45px steelfish_bd, sans-serif;
+    color: #fcfff6;
+}
+.nav {
+    width: 650px;
+    height: 31px;  
+    position: absolute; 
+    right: 140px;
+    top: 47px; 
+	z-index: 100;
+}
+.nav ul li {
+    width: auto;
+    height: auto;
+    float: right;
+    padding: 8px 14px 8px  16px;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 10px;
+	position:relative;   
+    -webkit-transition: background 0.5s ease;  /*плавное появление*/
+    -moz-transition: background 0.5s ease;
+    -o-transition: background 0.5s ease;
+}
+.nav li a {
+    text-align: center;
+    text-decoration: none;
+    font: bold 13px Rockwell, sans-serif;
+    color: #fefefe;
+}
+.nav li:hover {
+    background-color: #191919;
+}
+.tickDropdownMenu {
+    width: 8px;
+    height: 12px;
+	margin-left: 13px;
+	transform-origin: center;
+    /* transform */
+	-webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    -ms-transition: -moz-transform 0.4s;
+    -o-transition: -o-transform 0.4s;
+    transition: transform 0.4s;
+}
+.nav ul li ul {
+	-webkit-transition: opacity 0.5s ease;  /*плавное появление*/
+    -moz-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+	border-radius: 10px;
+	list-style:none;
+	position:absolute;
+	margin-top: 8px;
+    display: none;
+	/*left:-9999px;  Скрываем за экраном, когда не нужно (данный метод лучше, чем display:none;) */
+    opacity:0; /* Устанавливаем начальное состояние прозрачности */
+    -webkit-transition:0.5s opacity ease;	/* В Webkit выпадающие пункты будут проявляться */
+}
+.nav ul ul li{
+	padding: 8px 14px 8px  8px; /* Вводим отступ между li чтобы создать иллюзию разделенных пунктов меню */
+	float:none;
+	margin-right: 0;
+	}
+.nav ul ul a{
+	white-space:nowrap; /* Останавливаем перенос текста и создаем многострочный выпадающий пункт */
+	display:block;
+	}
+.nav ul li:hover ul{ /* Выводим выпадающий пункт при наведении курсора */
+	background-color: #191919;
+    display: block;
+    margin-left: -16px; /*заглушка для метода display*/
+	/*left:0;  Приносим его обратно на экран, когда нужно */
+	opacity:1; /* Делаем непрозрачным */
+}
+.nav ul li:hover .tickDropdownMenu{ /* Выводим выпадающий пункт при наведении курсора */
+    width: 8px;
+    height: 12px;
+	-moz-transform: rotate(-90deg ) ;
+	-webkit-transform: rotate(-90deg ) ;
+}
+.nav ul li:hover ul a{ /* Изменяем некоторые стили верхнего уровня при выводе выпадающего пункта */
+	color: #ffffff;
+	}
+.nav ul li:hover ul li a:hover{ /* Устанавливаем стили для выпадающих пунктов, когда курсор наводится на конкретный пункт */
+	color: #a76143;
+}
+/*  end of block  header */
+
+/*  beginning of the block  slaider */
+.slaiderDiv {
+    width: 1200px;
+    height: 729px;
+    background-image: url(../images/sliderBg.png);
+    background-repeat: repeat;
+    position: relative;
+}
+.slaiderDiv h2 {
+    width: 777px;
+    font: 30px Rockwell, sans-serif;
+    color: #ffffff;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    margin: auto;
+    text-align: center;
+}
+.slaiderDiv p{
+    width: 760px;
+    font: 14px Helvetica, sans-serif;
+    text-align: center;
+    color: #ffffff;
+    margin: auto auto auto;
+}
+.slaiderBox {
+	width: 940px;
+    height: 480px;
+	margin-left: 130px;
+	margin-top: 60px;
+}
+.slaiderBox_ul {
+	width: 940px;
+    height: 395px;
+	margin-left: 188px;
+	margin-top:130px;	
+}
+.slaiderBox li {
+    overflow: hidden;
+	border: 4px solid #ffffff;
+	width: 630px;
+    height: 395px;
+	box-shadow: 0 7px 10px -5px ;
+}
+.slaiderBox li img {
+	width: 100%;
+    height: 100%;
+}
+.slaiderCheckbox {
+	width: 300px;
+    height: 18px;
+	text-align: center;
+	position:absolute;
+	bottom: 50px;
+	left: 50%;
+	margin-left: -150px;
+}
+.slaiderCheckbox a{
+	width: 18px;
+    height: 18px;
+	background-image: url(../images/slaiderCheckboxPasiv.png);
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin: 0px 4px;
+}
+.slaiderCheckbox a:hover{
+	background-image: url(../images/slaiderCheckboxActiv.png);
+}
+.slaiderBottom {
+    height: 10px;
+    width: 1200px;
+    background-image: url(../images/slaiderBottom.jpg);
+    background-repeat: repeat-x;
+}
+/*  end of block  slaider */
+
+/*  beginning of the block  mainDiv */
+.mainDiv  {
+    height: 916px;
+    width: 1200px;
+    background-image: url(../images/mainDivBg.jpg);
+    background-repeat: repeat;
+    position: relative;
+}
+.mainDiv h3 {
+    font: bold 18px Rockwell, sans-serif;
+    color: #6e797d;
+    display: inline-block;
+}
+.mainDiv h4 {
+    font: bold 14px Rockwell, sans-serif;
+    color: #6e797d;
+}
+.mainDiv h5 {
+    font: italic 12px Georgia, sans-serif;
+    color: #7f7f78;
+}
+.mainDiv p {
+    font: 12px Helvetica, sans-serif;
+    color: #7f7f78;
+}
+.mainDiv a {
+    font: italic 12px Georgia, sans-serif;
+}
+.blogTitle {
+    width: 300px;
+}
+/* welcome  ______________________________*/
+.welcome {
+    width: 940px;
+    height: 100px;
+    background-image: url(../images/welcomeBg.png);
+    background-repeat: repeat-x;
+    background-position: bottom;
+	position: relative;
+    margin-left: 130px;  
+}
+.welcome h1 {
+    font: 30px Myriad Pro, sans-serif;
+    color: #6e797d;
+    position: absolute;
+    top: 33px;
+}
+.welcome span {
+    color: #b97866;
+}
+.FormSeach {
+    width: 240px;
+    height: 28px;
+	position: absolute;
+	top: 33px;
+    right: 0;
+	
+}
+.seach {
+    width: 228px;
+    height: 28px;
+    font: 12px Myriad Pro, sans-serif;
+    color: #7f7f78;
+    border-radius: 10px;
+    padding-left: 10px;
+	border: 1px solid #e1e1e1;
+}
+.seachButton {
+    width: 37px;
+    height: 31px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+/* treeBlog  ______________________________*/
+.treeBlog {
+    width: 960px;
+    height: 215px;
+    left: 130px;
+    margin-left: 130px;
+}
+.treeBlog_Blog {
+    width: 300px;
+    height: 175px;
+    float: left;
+    margin-right: 20px;
+    padding-top: 40px;
+}
+.treeBlog_Blog_headlines {
+    width: 300px;
+    height: 32px;
+    margin-bottom: 13px;
+}
+.BlogIcons {
+    padding-right: 15px;
+    float: left;
+}
+/* quotations  ______________________________*/
+.quotations {
+    width: 1200px;
+    height: 110px;
+    background-image: url(../images/QuotationsBg.png);
+    background-repeat: repeat;
+	position: relative;
+
+}
+.quotationsTopLine {
+	width: 1200px;
+    height: 2px;
+	background-image: url(../images/seamQuotationsBg.png);
+    background-repeat: repeat-x;
+	position: absolute;
+	top: 2px;
+	
+}
+.quotationsBottomLine {
+	width: 1200px;
+    height: 2px;
+	background-image: url(../images/seamQuotationsBg.png);
+    background-repeat: repeat-x;
+	position: absolute;
+	bottom: 2px;
+}
+.quotations_container {
+    width: 940px;
+    height: 110px;
+    margin: auto;
+    position: relative;
+	overflow: hidden;
+}
+.quotations li {
+    font: italic 18px Georgia, sans-serif;
+    color: #7f7f78;
+    text-align: center;
+    padding: 30px 45px;
+}
+.quotations_back {
+    width: 16px;
+    height: 24px;
+    background-image: url(../images/quotationsPasivBack.png);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -12px;
+}
+.quotations_forward{
+    width: 16px;
+    height: 24px; 
+    background-image: url(../images/quotationsPasivForward.png);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -12px;
+}
+.quotations_back:hover {
+    background-image: url(../images/quotationsActivBack.png);
+}
+.quotations_forward:hover {
+    background-image: url(../images/quotationsActivForward.png);
+}
+/* Flesh ______________________________*/
+.blogTitle {
+    width: 300px;
+	margin-bottom: 25px;
+}
+.FleshProjects {
+    width: 960px;
+    height: 160px;
+    margin-top: 40px;
+    margin-left: 130px;
+}
+.FleshProjects_list {
+	width: 960px;
+    height: 160px;
+}
+.flesh {
+    width: 210px;
+    height: 108px;
+    margin-right: 19px;
+    float: left;
+    padding: 5px;
+    outline: 1px solid #cccccc;
+	position: relative;
+}
+.flesh_a {
+	width: 28px;
+    height: 27px;
+	background-color: #ebebeb;
+	background-image: url(../images/flesh_a.png);
+	border: 3px solid #7e7e7e;
+	border-radius: 100%;
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	margin-top: -14px;
+	margin-right: -12px;
+	opacity:0;
+    -webkit-transition: opacity 0.2s ease;
+    -moz-transition: opacity 0.2s ease;
+    -o-transition: opacity 0.2s ease;
+}
+.flesh:hover  .flesh_a{
+	opacity:1;
+}
+/* FromTheBlog ______________________________*/
+.FromTheBlog {
+    width: 960px;
+    height: 190px;
+    margin-top: 40px; 
+    margin-left: 130px;
+}
+.FromTheBlog_TreeBlog {
+    width: 960px;
+    height: 150px;
+    
+}
+.FromTheBlog_TreeBlog_Blog {
+    width: 300px;
+    height: 150px;
+    padding-right: 20px;
+    float: left;
+}
+.FromTheBlog_TreeBlog_Blog img {
+    height: 60px;
+    width: 60px;
+    margin-right: 20px;
+    float: left;
+	padding: 5px;
+	outline: 1px solid #ccc;
+}
+.FromTheBlog_TreeBlog_Blog_headlines {
+    height: 60px;
+    width: 300px;
+    margin-bottom: 16px;
+}
+/*  end of block  mainDiv */
+
+/*  beginning of the block  footerDiv */
+.footerDiv  {
+    height: 563px;
+    width: 1200px;
+    background-image: url(../images/footerDivBg.png);
+    background-repeat: repeat;
+    position: relative;
+}
+.footerDiv_topline {
+    width: 1200px;
+    height: 2px;
+	background-image: url(../images/seamFooterBg.png);
+    background-repeat: repeat-x;
+	position: relative;
+	top: 7px;
+}
+.footerBird {
+    height: 74px;
+    width: 74px;
+    background-image: url(../images/footerBird.png);
+    position: absolute;
+    left: 50%;
+    top: -38px;
+    margin-left: -32px;
+    
+}
+.footerDiv_p {
+    font: italic 18px Georgia, sans-serif;
+    color: #e1e1e1;
+    text-align: center;
+    margin-top: 60px;
+}
+.footerAbout {
+    height: 800px;
+    width: 1300px;
+    background-image: url(../images/footerAboutBg.png);
+    background-repeat: repeat;
+    position: absolute;
+    left: -51px;
+    top: 143px;
+    border-radius: 650px/120px; 
+    border: #2c2c2c 1px solid;
+    padding: 40px 0px;
+}
+.footerAbout_info {
+    height: 800px;
+    width: 1300px;
+    position: relative;   
+}
+.footerAbout_info h3 {
+    font: bold 18px Rockwell, sans-serif;
+    color: #ffffff;
+    margin-bottom: 18px;
+}
+.footerAbout_info p, .footerAbout_info li {
+    font: 12px Helvetica, sans-serif;
+    color: #605f5f;
+}
+.GetSocial {
+    height: 75px;
+    width: 50%;
+    position: absolute;
+    top: 0px;
+    left: 25%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.GetSocial_vidget {
+	height: 32;
+}
+.footerAbout_info_blockGeneral {
+    height: 250px;
+    width: 965px;
+    position: relative;
+    top: 105px;
+    left: 180px;
+}
+.footerAbout_info_block {
+    height: 250px;
+    width: 300px;
+    margin-right: 20px;
+    float: left;   
+}
+.logoFooter {   
+    font: 45px steelfish_bd, sans-serif;
+    color: #fcfff6;
+    float: left;
+    padding-right: 15px;
+}
+.footerAbout_navigation {
+    height: 250px;
+    width: 140px;
+    margin-right: 10px;
+    
+}
+.footerAbout_What {
+    height: 250px;
+    width: 140px;
+    float: right;
+}
+.footerAbout_info li {
+    border-bottom: 1px solid #232225 ;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+.footerAbout_info li:first-child {
+    padding-top: 0;
+}
+.footerAbout_info li:last-child {
+    border-bottom: none;
+}
+.footerAbout_info li a {
+    color: #605f5f;
+}
+.footerAbout_info li a:hover {
+    color: #a76143;
+}
+.FormMail {
+	width: 300px;
+    height: 33px;
+	position: absolute;
+	top: 25px;
+	position: relative;
+}
+.mail {
+	width: 290px;
+    height: 30px;
+    font: 12px Myriad Pro, sans-serif;
+    color: #7f7f78;
+	background-image: url(../images/footerAboutMailBg.png);
+	border: 1px solid #242323;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+.mailButton {
+	width: 80px;
+    height: 29px;
+	background-color: #2e2e2e;
+    background-repeat: no-repeat;
+	border-top: 1px solid #696969;
+    border-radius: 5px;
+	position: absolute;
+	top: 2px;
+	right: 0;
+}
+.mailButton p{
+	font: bold 13px Rockwell, sans-serif ;
+	color: #ffffff;
+	padding-top: 7px; 
+	padding-left: 7px;
+}
+/*  end of block  footerDiv */
+.footer  {
+    height: 59px;
+    width: 1200px;
+	padding: 25px 130px;
+    background-image: url(../images/footerBg.jpg);
+    background-repeat: repeat;
+    position: relative;
+    bottom: 0;
+    border-top: 1px solid #060606;
+}
+.footer p {
+    font: 11px Georgia, sans-serif;
+    color: #605f5f;
+}
